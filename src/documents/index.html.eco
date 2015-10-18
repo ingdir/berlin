@@ -1,0 +1,11 @@
+--- cson
+title: "Welcome!"
+layout: "standard"
+---
+
+<p>Хотите работать программистом в Берлине? Вам к нам!</p>
+<p><%= @getTime() %></p>
+
+<% for page in @getCollection('qa').toJSON(): %>
+<%- @partial('qa', {title: page.title, text: page.text}) %>
+<% end %>
